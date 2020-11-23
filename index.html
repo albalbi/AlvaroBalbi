@@ -150,14 +150,12 @@
   	 <div id="id_divRight_img" class="center">
   	  <!-- asd -->
   	  
-  	  	<div>
+  	  	<div class="portrait">
 			<canvas id="myCanvas">
 				
 			</canvas>
 		</div>
 		
-		<br/>
-		<br/>
 		<div id="id_divAparencia" class="center">
 		    <button id='id_butLeft'  class="button" style="float:left;"> &lt; </button>
 			<select name="joao" id="id_select" style="width:auto;text-align: center;margin-top:8px;">
@@ -298,7 +296,7 @@ Num Soldados: <input type="text" id="id_soldados" placeholder="Numero de Soldado
 <br>
 <button id="id_gerar" class="button">Gerar</button><br>
 </div>
- <div id="id_divRight2" class="leftSide jorge">
+ <div id="id_divRight2" class="leftSide portrait" style="height: 100%;">
 		<!--<label id="id_label"></label>-->
   </div>
 
@@ -360,7 +358,7 @@ Num Soldados: <input type="text" id="id_soldados" placeholder="Numero de Soldado
   </div>
 
   <div id="id_divRight3" class="leftSide monsterContour" align="center" style="overflow: hidden;">
-  	<img id="img_monster" src="#" style="display:none">
+  	<img id="img_monster" class="portrait" src="#" style="display:none">
   </div>
         	
              <script src="monstros.js"></script>
@@ -382,7 +380,7 @@ Num Soldados: <input type="text" id="id_soldados" placeholder="Numero de Soldado
         text-align:center; padding-top:5px; background:#2D2D2D;}
     .ativa span, .selected span{color:#fff}
     .TabControl #content{background:#2D2D2D}
-    .TabControl .conteudo{width:100%;  background:#2D2D2D; display:none; height:100%;color:#fff}
+    .TabControl .conteudo{width:100%;  display:none; height:100%;color:#fff}
     .selected{width:100px; height:30px;display:block; border:solid 1 px; border-radius:5px 5px 0 0;
         text-align:center; padding-top:5px; background:#2D2D2D}
 </style>

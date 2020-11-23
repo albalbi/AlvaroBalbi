@@ -19,6 +19,7 @@ var CHAMod = [];
 var HPDice = [];
 var HP = [];
 
+
 function readTextFile(file)
 {
     var rawFile = new XMLHttpRequest();
@@ -221,6 +222,7 @@ function geraImg()
 	fonte = "imgs/asd.png";
 	document.getElementById('img_monster').setAttribute("src",fonte);
 	document.getElementById('img_monster').setAttribute("style","width:100%; height:100%");
+	document.getElementById('img_monster').setAttribute("class","");
 }
 
 function geraMonstro()

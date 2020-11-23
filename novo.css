@@ -18,6 +18,12 @@ body{
     background-color: #7c7c7c;
 }
 
+.conteudo
+{
+	background-image:url(imgs/background.jpg); 
+	background-size: cover;
+}
+
 .abas {
 	list-style-type: none;
 	}
@@ -39,6 +45,11 @@ body{
 	text-align:center;
 	background-image:url(imgs/contorno.png);
 	background-size:100% auto;
+}
+
+.portrait
+{
+	background-color: #2D2D2D;
 }
 
 .jorge

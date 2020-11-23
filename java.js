@@ -92,6 +92,17 @@ onload = function()
 	    	atualizaStatus(ev,false);
 	    },false);
 	}
+	
+	var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
+	var img = document.createElement("img");
+	img.src = "imgs/asd.png";
+	img.onload = function() {ctx.drawImage(img,0,0,maxWidth, maxHeight);};
+	//ctx.drawImage(img, 0, 0,maxWidth,maxHeight);
+	
+	fonte = "imgs/asd.png";
+	document.getElementById('img_monster').setAttribute("src",fonte);
+	document.getElementById('img_monster').setAttribute("style","width:100%; height:100%");
 };
 
 function atualizaStatus(element, isRightClick)

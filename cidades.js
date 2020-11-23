@@ -161,7 +161,6 @@
 		}
 		table.appendChild(tbody);
 		div.appendChild(table);
-		
 		//document.getElementById('id_label').innerHTML = label;
 		
 	}
