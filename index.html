@@ -115,32 +115,32 @@
 	         <td ><input type="text" id="char2" name="char2" value="" spellcheck="false" /></td>
 	      </tr>
 	      <tr >
-	         <td >Força</td>
-	         <td >Constituição</td>
-	         <td >Sabedoria</td>
+	         <td ><!--Força--></td>
+	         <td ><!--Constituição--></td>
+	         <td ><!--Sabedoria--></td>
 	      </tr>
 	      <tr >
-	         <td ><input type="number" id="forc" name="Editbox2" value="1" maxlength="2" spellcheck="false" /></td>
-	         <td ><input type="number" id="con" name="Editbox2" value="1" maxlength="2" spellcheck="false" /></td>
-	         <td ><input type="number" id="sab" name="Editbox2" value="1" maxlength="2" spellcheck="false" /></td>
+	         <td ><input type="hidden" id="forc" name="Editbox2" value="1" maxlength="2" spellcheck="false" /></td>
+	         <td ><input type="hidden" id="con" name="Editbox2" value="1" maxlength="2" spellcheck="false" /></td>
+	         <td ><input type="hidden" id="sab" name="Editbox2" value="1" maxlength="2" spellcheck="false" /></td>
 	      </tr>
 	      <tr >
-	         <td >Inteligencia</td>
-	         <td >Destreza</td>
-	         <td >Carisma</td>
+	         <td ><!--Inteligencia--></td>
+	         <td ><!--Destreza--></td>
+	         <td ><!--Carisma--></td>
 	      </tr>
 	      <tr >
-	         <td ><input type="number" id="int" name="Editbox2" value="1" maxlength="2" spellcheck="false" /></td>
-	         <td ><input type="number" id="des" name="Editbox2" value="1" maxlength="2" spellcheck="false" /></td>
-	         <td ><input type="number" id="car" name="Editbox2" value="1" maxlength="2" spellcheck="false" /></td>
+	         <td ><input type="hidden" id="int" name="Editbox2" value="1" maxlength="2" spellcheck="false" /></td>
+	         <td ><input type="hidden" id="des" name="Editbox2" value="1" maxlength="2" spellcheck="false" /></td>
+	         <td ><input type="hidden" id="car" name="Editbox2" value="1" maxlength="2" spellcheck="false" /></td>
 	      </tr>
 	   </tbody>
 	</table>
 	<table class="center">
 			<tbody>
 				<tr >
-					<td align="center"><button id="gerar">Gerar</button></td>
-					<td align="center"><button id="limpar">Limpar</button></td>
+					<td align="center"><button class="button" id="gerar">Gerar</button></td>
+					<td align="center"><button class="button" id="limpar">Limpar</button></td>
 				</tr>
 			</tbody>
 	</table>
@@ -150,15 +150,17 @@
   	 <div id="id_divRight_img" class="center">
   	  <!-- asd -->
   	  
-		<canvas id="myCanvas">
-			
-		</canvas>
+  	  	<div>
+			<canvas id="myCanvas">
+				
+			</canvas>
+		</div>
 		
 		<br/>
 		<br/>
 		<div id="id_divAparencia" class="center">
-		    <button id='id_butLeft' style="float:left;"> &lt; </button>
-			<select name="joao" id="id_select" style="width:inherit;">
+		    <button id='id_butLeft'  class="button" style="float:left;"> &lt; </button>
+			<select name="joao" id="id_select" style="width:auto;text-align: center;margin-top:8px;">
 		      <option value="1">Olho</option>
 		      <option value="2">Cor do Olho</option>
 		      <option value="3">Cabelo</option>
@@ -170,7 +172,7 @@
 		      <option value="9">Orelha</option>
 		      <option value="10">Bigode</option>
 		    </select>
-		    <button id='id_butRight' style="float:right;"> &gt; </button>
+		    <button id='id_butRight' class="button" style="float:right;"> &gt; </button>
 		</div>
 	
 	    <img src="#" id="id_imgOlho" width="500px" height="300px" style="display:none;">
@@ -188,6 +190,38 @@
  			 
  	 </div>
   	
+	<div id="id_divShields" class="stats center" style="width:320px;">
+		<table><tbody>
+			<tr>
+				<td>FOR</td>
+				<td>DES</td>
+				<td>CON</td>
+				<td>INT</td>
+				<td>SAB</td>
+				<td>CAR</td>
+			</tr>
+			<tr>
+				<td>
+					<div id="div_forca" class="image"><label id="img_forca">1</label></div>
+				</td>
+				<td>
+					<div id="div_destreza" class="image"><label id="img_destreza">1</label></div>
+				</td>
+				<td>
+					<div id="div_constituicao" class="image"><label id="img_constituicao">1</label></div>
+				</td>
+				<td>
+					<div id="div_inteligencia" class="image"><label id="img_inteligencia">1</label></div>
+				</td>
+				<td>
+					<div id="div_sabedoria" class="image"><label id="img_sabedoria">1</label></div>
+				</td>
+				<td>
+					<div id="div_carisma" class="image"><label id="img_carisma">1</label></div>
+				</td>
+			</tr>
+		</tbody></table>
+  	</div>
    <br>
 
   </div>
@@ -262,19 +296,19 @@ Num Soldados: <input type="text" id="id_soldados" placeholder="Numero de Soldado
 </table>
 
 <br>
-<button id="id_gerar">Gerar</button><br>
+<button id="id_gerar" class="button">Gerar</button><br>
 </div>
- <div id="id_divRight2" class="leftSide">
+ <div id="id_divRight2" class="leftSide jorge">
 		<!--<label id="id_label"></label>-->
   </div>
 
-        </div>
+</div>
         <div class="conteudo">
         	<div id="id_divLeft3" class="rightSide center">
 	  <table>
 	  	<tr>
 	  		<td colspan="2" align="center">
-	  			<select id="id_Monster"></select>
+	  			Monstro:<select id="id_Monster"></select>
 	  		</td>
 	  	</tr>
 	  	<tr>
@@ -316,16 +350,16 @@ Num Soldados: <input type="text" id="id_soldados" placeholder="Numero de Soldado
 	  	
 	 	<tr>
 	 		<td align="center">
-				<button id="id_monsterCreate">Gerar</button>
+				<button id="id_monsterCreate" class="button">Gerar</button>
 	 		</td>
 	 		<td align="center">
-				<button id="id_monsterClear">Limpar</button>
+				<button id="id_monsterClear" class="button">Limpar</button>
 	 		</td>
 	 	</tr>
 	  </table>
   </div>
 
-  <div id="id_divRight3" class="leftSide center">
+  <div id="id_divRight3" class="leftSide monsterContour" align="center" style="overflow: hidden;">
   	<img id="img_monster" src="#" style="display:none">
   </div>
         	
@@ -354,7 +388,7 @@ Num Soldados: <input type="text" id="id_soldados" placeholder="Numero de Soldado
 </style>
 
 	
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -374,6 +408,7 @@ $(document).ready(function(){
     document.getElementById('id_divRight3').style.display = "block";
     document.getElementById('id_divLeft3').style.display = "block";
     document.getElementById('id_divAparencia').style.display = "block";
+    document.getElementById('id_divShields').style.display = "block";
   }); 
    
   $(".aba").hover(

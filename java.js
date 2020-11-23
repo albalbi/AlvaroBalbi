@@ -69,13 +69,143 @@ raca.addEventListener('change', function () {
   //textoCarta.innerHTML = 'selectedIndex: ' + racaIndex;
 });
 
+onload = function()
+{
+	var edits = document.getElementsByName('Editbox2');
+	edits.forEach
+	(
+		function(element) 
+		{
+      		element.addEventListener('change', atualizaImgStatus);
+    	}
+    );
+    
+    var shields = document.getElementsByClassName('image');
+    for (var i = 0; i < shields.length; i++) 
+    {
+    	shields[i].addEventListener('contextmenu', function(ev) {
+		    ev.preventDefault();
+		    atualizaStatus(ev,true);
+		}, false);
+		
+	    shields[i].addEventListener('click', function (ev) {
+	    	atualizaStatus(ev,false);
+	    },false);
+	}
+};
+
+function atualizaStatus(element, isRightClick)
+{
+	var item;
+	switch(element.target.id.substring(4))
+	{
+		case 'forca':
+			if(isRightClick)
+			{
+				document.getElementById('forc').value--;
+				document.getElementById('img_forca').innerHTML--;
+			}
+			else
+			{
+				document.getElementById('forc').value++;
+				document.getElementById('img_forca').innerHTML++;
+			}
+		break;
+		case 'destreza':
+			if(isRightClick)
+			{
+				document.getElementById('des').value--;
+				document.getElementById('img_destreza').innerHTML--;
+			}
+			else
+			{
+				document.getElementById('des').value++;
+				document.getElementById('img_destreza').innerHTML++;
+			}
+		break;
+		case 'constituicao':
+			if(isRightClick)
+			{
+				document.getElementById('con').value--;
+				document.getElementById('img_constituicao').innerHTML--;
+			}
+			else
+			{
+				document.getElementById('con').value++;
+				document.getElementById('img_constituicao').innerHTML++;
+			}
+		break;
+		case 'inteligencia':
+			if(isRightClick)
+			{
+				document.getElementById('int').value--;
+				document.getElementById('img_inteligencia').innerHTML--;
+			}
+			else
+			{
+				document.getElementById('int').value++;
+				document.getElementById('img_inteligencia').innerHTML++;
+			}
+		break;
+		case 'sabedoria':
+			if(isRightClick)
+			{
+				document.getElementById('sab').value--;
+				document.getElementById('img_sabedoria').innerHTML--;
+			}
+			else
+			{
+				document.getElementById('sab').value++;
+				document.getElementById('img_sabedoria').innerHTML++;
+			}
+		break;
+		case 'carisma':
+			if(isRightClick)
+			{
+				document.getElementById('car').value--;
+				document.getElementById('img_carisma').innerHTML--;
+			}
+			else
+			{
+				document.getElementById('car').value++;
+				document.getElementById('img_carisma').innerHTML++;
+			}
+		break;
+	}
+	
+}
+function atualizaImgStatus(element)
+{
+	console.log(element.target.id);
+	switch(element.target.id)
+	{
+		case 'forc':
+			document.getElementById('img_forca').innerHTML = element.target.value;
+		break;
+		case 'con':
+			document.getElementById('img_constituicao').innerHTML = element.target.value;
+		break;
+		case 'sab':
+			document.getElementById('img_sabedoria').innerHTML = element.target.value;
+		break;
+		case 'des':
+			document.getElementById('img_destreza').innerHTML = element.target.value;
+		break;
+		case 'int':
+			document.getElementById('img_inteligencia').innerHTML = element.target.value;
+		break;
+		case 'car':
+			document.getElementById('img_carisma').innerHTML = element.target.value;
+		break;
+	}
+}
+
 var max = 2;
 var min = 1;
 
 
 //********************************************************
 // AQUI EH O CODIGO NOVO DE ESCOLHER IMAGEM DO PERSONAGEM
-
 
 var maxWidth = 300, maxHeight = 286;
 document.getElementById('myCanvas').width = maxWidth;
@@ -316,6 +446,7 @@ function AtualizaImagem()
   if (AcorCabelo != 0 && Acabelo != 0)
   {
 	console.log("AI_AcorCabelo = " + AcorCabelo);
+	console.log("AI_Acabelo = " + Acabelo);
   		
   	var caminho = "fotos/" + raca2 + "/" + genero + "/cabelo" + Acabelo +"." + AcorCabelo + ".png";
  	var imgCorDoCabelo = document.getElementById('id_imgCordoCabelo');
@@ -367,7 +498,7 @@ function AtualizaImagem()
 	
   }
   
-   if (ASobrancelha != 0)
+   /*if (ASobrancelha != 0)
   {
 	console.log("AI_ASobrancelha = " + ASobrancelha);
   		
@@ -376,7 +507,11 @@ function AtualizaImagem()
     imgSobrancelha.src = caminho;
     ctx.drawImage(imgSobrancelha , 0,0,maxWidth,maxHeight);	
 	
-  }
+  }*/
+ 
+  var img = document.createElement("img");
+  img.src = "imgs/asd.png";
+  ctx.drawImage(img, 0, 0,maxWidth,maxHeight);
   console.log("termineir");
 }
 
@@ -414,35 +549,47 @@ function geraLevel() {
 }
 
 function geraStatus() {
-	if(document.getElementById("forc").value == 1)
+	if(true)
 	{
 	    var x = Math.floor((Math.random() * 16))+3;
 	    document.getElementById("forc").value = x;
+	    document.getElementById("forc").setAttribute("type","hidden");
+	    document.getElementById('img_forca').innerHTML = x;
    	}
-	if(document.getElementById("des").value == 1)
+	if(true)
 	{
 	    var x = Math.floor((Math.random() * 16))+3;
 	    document.getElementById("des").value = x;
+	    document.getElementById("des").setAttribute("type","hidden");
+	    document.getElementById('img_destreza').innerHTML = x;
    	}
-	if(document.getElementById("int").value == 1)
+	if(true)
 	{
 	    var x = Math.floor((Math.random() * 16))+3;
 	    document.getElementById("int").value = x;
+	    document.getElementById("int").setAttribute("type","hidden");
+	    document.getElementById('img_inteligencia').innerHTML = x;
    	}
-	if(document.getElementById("sab").value == 1)
+	if(true)
 	{
 	    var x = Math.floor((Math.random() * 16))+3;
 	    document.getElementById("sab").value = x;
+	    document.getElementById("sab").setAttribute("type","hidden");
+	    document.getElementById('img_sabedoria').innerHTML = x;
    	}
-	if(document.getElementById("con").value == 1)
+	if(true)
 	{
 	    var x = Math.floor((Math.random() * 16))+3;
 	    document.getElementById("con").value = x;
+	    document.getElementById("con").setAttribute("type","hidden");
+	    document.getElementById('img_constituicao').innerHTML = x;
    	}
-	if(document.getElementById("car").value == 1)
+	if(true)
 	{
 	    var x = Math.floor((Math.random() * 16))+3;
 	    document.getElementById("car").value = x;
+	    document.getElementById("car").setAttribute("type","hidden");
+	    document.getElementById('img_carisma').innerHTML = x;
    	}
 }
 	
@@ -634,7 +781,7 @@ function geraFoto()
 		
 	Aolho = getRandomInt(1,maxOlho);
 	Acabelo = getRandomInt(1,maxCabelo);
-	AcorCabelo = getRandomInt(1,maxCabelo);
+	AcorCabelo = getRandomInt(1,maxCorCabelo);
 	Aboca = getRandomInt(1,maxBoca);
 	Asobrancelha = getRandomInt(1,maxSobrancelha);
 	ACordoOlho = getRandomInt(1,maxCordoOlho);
@@ -662,7 +809,7 @@ function geraFicha()
 	//geraCA();
 	console.log("reset = "+reset);
 	geraFoto();
-	timer = setInterval(AtualizaImagem, 100);
+	timer = setInterval(AtualizaImagem, 1000);
 	reset = false;
 }
 function limparTudo()
@@ -682,12 +829,18 @@ function limparTudo()
 	document.getElementById("con").value = 1;
 	document.getElementById("car").value = 1;
 	document.getElementById("idade").value = 1;
-	document.getElementById("peso").value = 1;
-	document.getElementById("alt").value = 1;
-	document.getElementById("vida").value = 1;
-	document.getElementById("ca").value = 1;
+	//document.getElementById("vida").value = 1;
+	//document.getElementById("ca").value = 1;
 	document.getElementById("img").setAttribute("style","display:none");
 	document.getElementById("img-cabelo").setAttribute("style","display:none");
+	
+	document.getElementById("img_forca").innerHTML = 1;
+	document.getElementById("img_destreza").innerHTML = 1;
+	document.getElementById("img_inteligencia").innerHTML = 1;
+	document.getElementById("img_sabedoria").innerHTML = 1;
+	document.getElementById("img_constituicao").innerHTML = 1;
+	document.getElementById("img_carisma").innerHTML = 1;
+	
 	reset = true;
 	clearInterval(timer);
 	Aolho = Acabelo = AcorCabelo = Aboca = Asobrancelha = ACordoOlho = ANariz = ABarba = ABigode = AOrelha = 0;
