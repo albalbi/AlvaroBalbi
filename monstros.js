@@ -213,16 +213,26 @@ function geraHP()
 
 function geraImg()
 {
+	var c = document.getElementById("monsterCanvas");
+	var ctx = c.getContext("2d");
+	ctx.clearRect(0, 0, maxWidth, maxHeight); 
+	var origX, origY;
+	origX = 19;
+	origY = 10.5;
+	var wid, hei;
+	wid = 300;
+	hei = 150;
 	
-	fonte = "monstros/";
-	fonte += names[monsterIndex]+".jpg";
+	  var img = document.createElement("img");
+	  img.src = "monstros/" + names[monsterIndex]+".jpg";
+	  
+		img.onload = function() {ctx.drawImage(img, origX, origY,wid*0.875,hei*0.8);};
+	  
 	
-	document.getElementById('id_divRight3').style.backgroundImage = "url('"+fonte+"')";
-	document.getElementById('id_divRight3').style.backgroundSize = "100% 97%";
-	fonte = "imgs/asd.png";
-	document.getElementById('img_monster').setAttribute("src",fonte);
-	document.getElementById('img_monster').setAttribute("style","width:100%; height:100%");
-	document.getElementById('img_monster').setAttribute("class","");
+	var img2 = document.createElement("img");
+	img2.src = "imgs/asd.png";
+	ctx.drawImage(img2, 0, 0,wid,hei);
+	
 }
 
 function geraMonstro()
@@ -267,10 +277,11 @@ function monster_limparTudo()
 	document.getElementById('id_MonsterCHAMod').value = "";
 	document.getElementById('id_MonsterHP').value = "";
 	document.getElementById('id_MonsterHPMod').value = "";
-	document.getElementById("img_monster").setAttribute("style","display:none");
 	
-	document.getElementById('id_divRight3').style.backgroundImage = "";
-	document.getElementById('id_divRight3').style.backgroundSize = "";
+	
+	var c = document.getElementById("monsterCanvas");
+	var ctx = c.getContext("2d");
+	ctx.clearRect(19, 11,300*0.89,150*0.8); 
 	
 }
 

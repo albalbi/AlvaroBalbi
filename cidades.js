@@ -160,7 +160,15 @@
 			//label += "<br>";	
 		}
 		table.appendChild(tbody);
+		var br = document.createElement('br');
+		div.appendChild(br.cloneNode(true));
+		div.appendChild(br.cloneNode(true));
 		div.appendChild(table);
+		div.appendChild(br.cloneNode(true));
+		div.appendChild(br.cloneNode(true));
+		div.appendChild(br.cloneNode(true));
+		div.appendChild(br.cloneNode(true));
+		div.setAttribute("style","width:50%");
 		//document.getElementById('id_label').innerHTML = label;
 		
 	}

@@ -93,16 +93,21 @@ onload = function()
 	    },false);
 	}
 	
-	var c = document.getElementById("myCanvas");
-	var ctx = c.getContext("2d");
-	var img = document.createElement("img");
-	img.src = "imgs/asd.png";
-	img.onload = function() {ctx.drawImage(img,0,0,maxWidth, maxHeight);};
+	var cd = document.getElementById("myCanvas");
+	var ctxd = cd.getContext("2d");
+	ctxd.clearRect(0, 0, maxWidth, maxHeight); 
+	var img3 = document.createElement("img");
+	img3.src = "imgs/asd.png";
+	img3.onload = function() {ctxd.drawImage(img3,0,0,maxWidth, maxHeight);};
+	console.log("img3 = " + img3);
 	//ctx.drawImage(img, 0, 0,maxWidth,maxHeight);
 	
-	fonte = "imgs/asd.png";
-	document.getElementById('img_monster').setAttribute("src",fonte);
-	document.getElementById('img_monster').setAttribute("style","width:100%; height:100%");
+	var c = document.getElementById("monsterCanvas");
+	var ctx = c.getContext("2d");
+	var img2 = document.createElement("img");
+	img2.src = "imgs/asd.png";
+	img2.onload = function() {ctx.clearRect(0,0,300,150); ctx.drawImage(img2, 0, 0,300,150);};
+	
 };
 
 function atualizaStatus(element, isRightClick)
@@ -221,7 +226,6 @@ var min = 1;
 var maxWidth = 300, maxHeight = 286;
 document.getElementById('myCanvas').width = maxWidth;
 document.getElementById('myCanvas').height = maxHeight;
-document.getElementById('myCanvas').style = "border:1px solid #000000;";
 
 console.log("div = " + document.getElementById('id_divRight_img'));
 console.log("div.width = " + document.getElementById('id_divRight_img').width);
@@ -402,6 +406,15 @@ function AtualizaImagem()
 	var c = document.getElementById("myCanvas");
 	var ctx = c.getContext("2d");
 	ctx.clearRect(0, 0, maxWidth, maxHeight); 
+	var origX, origY;
+	origX = 19;
+	origY = 20;
+	var wid, hei;
+	wid = 262;
+	hei = 230;
+	//wid = document.getElementById('wid').value;
+	//hei = document.getElementById('hei').value; 
+	  
 	  
 	var genero = document.getElementById('genero').value;
 	var raca2 = document.getElementById('raca').value;
@@ -419,7 +432,7 @@ function AtualizaImagem()
   {
 	  var img = document.getElementById("img");
 	  img.src = "fotos/" + raca2 + "/" + genero + "/base.png";
-	  ctx.drawImage(img, 0, 0,maxWidth,maxHeight);	
+	  ctx.drawImage(img, origX, origY,wid,hei);	
   }
 	
 
@@ -430,7 +443,7 @@ function AtualizaImagem()
   	var caminho = "fotos/" + raca2 + "/" + genero + "/olho" + Aolho + ".png";
  	var imgOlho = document.getElementById('id_imgOlho');
     imgOlho.src = caminho;
-    ctx.drawImage(imgOlho , 0,0,maxWidth,maxHeight);
+	  ctx.drawImage(imgOlho, origX, origY,wid,hei);
   }
    if (ACordoOlho != 0)
   {
@@ -439,7 +452,7 @@ function AtualizaImagem()
   	var caminho = "fotos/" + raca2 + "/" + genero + "/cor" + ACordoOlho + ".png";
  	var imgCordoOlho = document.getElementById('id_imgCordoOlho');
     imgCordoOlho.src = caminho;
-    ctx.drawImage(imgCordoOlho , 0,0,maxWidth,maxHeight);	
+	  ctx.drawImage(imgCordoOlho, origX, origY,wid,hei);	
 	
   }
   if (ABarba != 0)
@@ -451,7 +464,7 @@ function AtualizaImagem()
 	  	var caminho = "fotos/" + raca2 + "/" + genero + "/barba" + ABarba + ".png";
 	 	var imgBarba = document.getElementById('id_imgBarba');
 	    imgBarba.src = caminho;
-	    ctx.drawImage(imgBarba , 0,0,maxWidth,maxHeight);	
+	  ctx.drawImage(imgBarba, origX, origY,wid,hei);	
 	}
   }
   if (AcorCabelo != 0 && Acabelo != 0)
@@ -462,7 +475,7 @@ function AtualizaImagem()
   	var caminho = "fotos/" + raca2 + "/" + genero + "/cabelo" + Acabelo +"." + AcorCabelo + ".png";
  	var imgCorDoCabelo = document.getElementById('id_imgCordoCabelo');
     imgCorDoCabelo.src = caminho;
-    ctx.drawImage(imgCorDoCabelo , 0,0,maxWidth,maxHeight);	
+	  ctx.drawImage(imgCorDoCabelo, origX, origY,wid,hei);	
 	
   }
    if (Aboca != 0)
@@ -472,7 +485,7 @@ function AtualizaImagem()
   	var caminho = "fotos/" + raca2 + "/" + genero + "/boca" + Aboca + ".png";
  	var imgBoca = document.getElementById('id_imgBoca');
     imgBoca.src = caminho;
-    ctx.drawImage(imgBoca , 0,0,maxWidth,maxHeight);	
+	  ctx.drawImage(imgBoca, origX, origY,wid,hei);	
 	
   }
    if (AOrelha != 0)
@@ -482,7 +495,7 @@ function AtualizaImagem()
   	var caminho = "fotos/" + raca2 + "/" + genero + "/orelha" + AOrelha + ".png";
  	var imgOrelha = document.getElementById('id_imgOrelha');
     imgOrelha.src = caminho;
-    ctx.drawImage(imgOrelha , 0,0,maxWidth,maxHeight);	
+	  ctx.drawImage(imgOrelha, origX, origY,wid,hei);	
 	
   }
    if (ABigode != 0)
@@ -494,7 +507,7 @@ function AtualizaImagem()
 	  	var caminho = "fotos/" + raca2 + "/" + genero + "/bigode" + ABigode + ".png";
 	 	var imgBigode = document.getElementById('id_imgBigode');
 	    imgBigode.src = caminho;
-	    ctx.drawImage(imgBigode , 0,0,maxWidth,maxHeight);	
+	  ctx.drawImage(imgBigode, origX, origY,wid,hei);	
 	}
   }
   
@@ -505,7 +518,7 @@ function AtualizaImagem()
   	var caminho = "fotos/" + raca2 + "/" + genero + "/nariz" + ANariz + ".png";
  	var imgNariz = document.getElementById('id_imgNariz');
     imgNariz.src = caminho;
-    ctx.drawImage(imgNariz , 0,0,maxWidth,maxHeight);	
+	  ctx.drawImage(imgNariz, origX, origY,wid,hei);	
 	
   }
   
@@ -639,7 +652,7 @@ function geraSexo()
 		{
 			newIndex = Math.floor(Math.random()*opts.length);
 		}
-		
+		//genero.selectedIndex= 2;
 	    genero.selectedIndex= newIndex;
    	}
 }
@@ -655,7 +668,7 @@ function geraRaca()
 		{
 			newIndex = Math.floor(Math.random()*opts.length);
 		}
-		
+		//raca.selectedIndex= 2;
 	    raca.selectedIndex= newIndex;
    	}
 }

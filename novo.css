@@ -1,11 +1,18 @@
 .rightSide
 {
 	float: right;
+	width: 50%;
+}
+
+.monsterCanvas
+{
+	
 }
 
 .leftSide
 {
 	float: left;
+	width: 50%;
 }
 
 .center {
@@ -47,9 +54,25 @@ body{
 	background-size:100% auto;
 }
 
-.portrait
+.tableCidadoes
 {
-	background-color: #2D2D2D;
+	background: url('imgs/pessoas-cidade.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.tableChar
+{
+	background: url('imgs/tabela-entrada.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.tableMonster
+{
+	background: url('imgs/tabela-monstro.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
 }
 
 .jorge

@@ -33,6 +33,8 @@
         <div class="conteudo" onshow="myFunction()">
             
   <div id="id_divLeft" class="rightSide">
+  	<div class="tableChar">
+  	  <br/><br/>
 	  <table class="center" >
 	   <tbody>
 	      <tr >
@@ -134,23 +136,28 @@
 	         <td ><input type="hidden" id="des" name="Editbox2" value="1" maxlength="2" spellcheck="false" /></td>
 	         <td ><input type="hidden" id="car" name="Editbox2" value="1" maxlength="2" spellcheck="false" /></td>
 	      </tr>
+	      
+	      
+			<tr >
+				<td align="center"><button class="button" id="gerar">Gerar</button></td>
+				<td align="center"></td>
+				<td align="center"><button class="button" id="limpar">Limpar</button></td>
+			</tr>
+
 	   </tbody>
 	</table>
-	<table class="center">
-			<tbody>
-				<tr >
-					<td align="center"><button class="button" id="gerar">Gerar</button></td>
-					<td align="center"><button class="button" id="limpar">Limpar</button></td>
-				</tr>
-			</tbody>
-	</table>
+  	  <br/><br/><br/><br/>
+	</div>
   </div>
 
   <div id="id_divRight" class="leftSide">
+  	<div id="footer" style="height: 4%;">
+	  <label style="color: yellow; font-size: 10px;">Apenas o anão macho, elfa femea e meia orc femea são editaveis</label>        
+	</div>
   	 <div id="id_divRight_img" class="center">
   	  <!-- asd -->
   	  
-  	  	<div class="portrait">
+  	  	<div>
 			<canvas id="myCanvas">
 				
 			</canvas>
@@ -228,137 +235,151 @@
 
 
   <div id="id_divLeft2" class="rightSide center">
-<table>
-<tr>
-    <td>
-Tipo: 	<select id="id_tipo">
-			<option value=""></option>
-			<option value="lugarejo">Lugarejo</option>
-			<option value="povoado">Povoado</option>
-			<option value="aldeia">Aldeia</option>
-			<option value="vila pequena">Vila Pequena</option>
-			<option value="vila grande">Vila Grande</option>
-			<option value="cidade pequena">Cidade Pequena</option>
-			<option value="cidade grande">Cidade Grande</option>
-			<option value="metropole">Metropole</option>
-		</select>
-        </td>
-    <td>
-População: <input type="text" id="id_populacao" placeholder="População">
-        </td>
-    </tr>
-<tr>
-    <td>
-Tendencia: <select id="id_tendencia">
-			<option value=""></option>
-			<option value="Leal Bom">Leal Bom</option>
-			<option value="Leal Neutro">Leal Neutro</option>
-			<option value="Leal Mau">Leal Mau</option>
-			<option value="Caotico Bom">Caotico Bom</option>
-			<option value="Caotico Neutro">Caotico Neutro</option>
-			<option value="Caotico Mau">Caotico Mau</option>
-			<option value="Neutro">Neutro</option>
-			<option value="Neutro Bom">Neutro Bom</option>
-			<option value="Neutro Mau">Neutro Mau</option>
-		</select>
-        </td>
-    <td>
-Dinheiro: <input type="text" id="id_dinheiro" placeholder="Dinheiro">
-        </td>
-    </tr>
-<tr>
-    <td colspan="2">
-Controle: <select id="id_controle">
-			<option value=""></option>
-			<option value="convencional">Convencional</option>
-			<option value="incomum">Incomum</option>
-			<option value="magico">Mágico</option>
-			<option value="monstruoso">Monstruoso</option>
-		</select>
-        </td>
-    </tr>
-</table>
-
-<br>
-
-<table>
-<tr>
-    <td width="300">
-Cap. da Guarda: <input type="text" id="id_capitao" placeholder="capitão da cidade" size="25">
-        </td>
-    <td>
-Num Soldados: <input type="text" id="id_soldados" placeholder="Numero de Soldados">
-        </td>
-    </tr>
-
-</table>
-
-<br>
-<button id="id_gerar" class="button">Gerar</button><br>
-</div>
- <div id="id_divRight2" class="leftSide portrait" style="height: 100%;">
+  	<div class="tableChar" id="id_divTableCidade" align="center" style="display:block;">
+  		<br><br>
+		<table>
+			<tr>
+			    <td>
+					Tipo</td><td> 	<select id="id_tipo">
+						<option value=""></option>
+						<option value="lugarejo">Lugarejo</option>
+						<option value="povoado">Povoado</option>
+						<option value="aldeia">Aldeia</option>
+						<option value="vila pequena">Vila Pequena</option>
+						<option value="vila grande">Vila Grande</option>
+						<option value="cidade pequena">Cidade Pequena</option>
+						<option value="cidade grande">Cidade Grande</option>
+						<option value="metropole">Metropole</option>
+					</select>
+			        </td>
+			    <td>
+					População</td><td> <input type="text" id="id_populacao" placeholder="População">
+		        </td>
+		    </tr>
+			<tr>
+			    <td>
+					Tendencia</td><td> <select id="id_tendencia">
+						<option value=""></option>
+						<option value="Leal Bom">Leal Bom</option>
+						<option value="Leal Neutro">Leal Neutro</option>
+						<option value="Leal Mau">Leal Mau</option>
+						<option value="Caotico Bom">Caotico Bom</option>
+						<option value="Caotico Neutro">Caotico Neutro</option>
+						<option value="Caotico Mau">Caotico Mau</option>
+						<option value="Neutro">Neutro</option>
+						<option value="Neutro Bom">Neutro Bom</option>
+						<option value="Neutro Mau">Neutro Mau</option>
+					</select>
+		        </td>
+			    <td>
+					Dinheiro</td><td> <input type="text" id="id_dinheiro" placeholder="Dinheiro">
+		        </td>
+		    </tr>
+			<tr>
+			    <td>
+					Controle</td><td> <select id="id_controle">
+						<option value=""></option>
+						<option value="convencional">Convencional</option>
+						<option value="incomum">Incomum</option>
+						<option value="magico">Mágico</option>
+						<option value="monstruoso">Monstruoso</option>
+					</select>
+		        </td>
+		    </tr>
+		    
+		    <tr>
+			    <td >
+					Cap. da Guarda</td><td> <input type="text" id="id_capitao" placeholder="capitão da cidade" size="25">
+		        </td>
+			    <td>
+					Num Soldados</td><td> <input type="text" id="id_soldados" placeholder="Numero de Soldados">
+		        </td>
+		    </tr>
+		    
+		    <tr>
+			    <td colspan="4" align="center">
+					<button id="id_gerar" class="button">Gerar</button><br>
+		        </td>
+		    </tr>
+		</table>
+		
+		<br><br><br>
+	</div>
+	<br>
+	</div>
+ <div id="id_divRight2" class="leftSide tableCidadoes" align="center" style="width:50%; height:80%">
 		<!--<label id="id_label"></label>-->
   </div>
 
 </div>
         <div class="conteudo">
-        	<div id="id_divLeft3" class="rightSide center">
-	  <table>
-	  	<tr>
-	  		<td colspan="2" align="center">
-	  			Monstro:<select id="id_Monster"></select>
-	  		</td>
-	  	</tr>
-	  	<tr>
-	  		<td>T. Armor: <input type="text" id="id_MonsterACType" value=""spellcheck="false"></td>
-	  		<td>AC: <input type="number" id="id_MonsterAC" value="1" spellcheck="false"></td>
-	  	</tr>
-	  	<tr>
-	  		<td>CR: <input type="number" id="id_MonsterChaRating" value="1" spellcheck="false"></td>
-	  		<td> XP: <input type="number" id="id_MonsterChaXP" value="1" spellcheck="false"></td>
-	  	</tr>
-	  	<tr>
-	  		<td>STR: <input type="number" id="id_MonsterSTR" value="1" min="1" spellcheck="false"></td>
-	  		<td>STRMod: <input type="number" id="id_MonsterSTRMod" value="1" maxlength="2" spellcheck="false"></td>
-	 	</tr>
-	  	<tr>
-	  		<td>DEX: <input type="number" id="id_MonsterDEX" value="1" min="1" spellcheck="false"></td>
-	  		<td>DEXMod: <input type="number" id="id_MonsterDEXMod" value="1" maxlength="2" spellcheck="false"></td>
-	 	</tr>
-	  	<tr>
-	  		<td>CON: <input type="number" id="id_MonsterCON" value="1" min="1" spellcheck="false"></td>
-	  		<td>CONMod: <input type="number" id="id_MonsterCONMod" value="1" maxlength="2" spellcheck="false"></td>
-	 	</tr>
-	  	<tr>
-	  		<td>INT: <input type="number" id="id_MonsterINT" value="1" min="1" spellcheck="false"></td>
-	  		<td>INTMod: <input type="number" id="id_MonsterINTMod" value="1" maxlength="2" spellcheck="false"></td>
-	 	</tr>
-	  	<tr>
-	  		<td>WIS: <input type="number" id="id_MonsterWIS" value="1" min="1" spellcheck="false"></td>
-	  		<td>WISMod: <input type="number" id="id_MonsterWISMod" value="1" maxlength="2" spellcheck="false"></td>
-	 	</tr>
-	  	<tr>
-	  		<td>CHA: <input type="number" id="id_MonsterCHA" value="1" min="1" spellcheck="false"></td>
-	  		<td>CHAMod: <input type="number" id="id_MonsterCHAMod" value="1" maxlength="2" spellcheck="false"></td>
-	 	</tr>
-	  	<tr>
-	  		<td>HP: <input type="number" id="id_MonsterHP" value="1" min="1" spellcheck="false"></td>
-	  		<td>HPDice: <input type="text" id="id_MonsterHPMod" value="1" maxlength="2" spellcheck="false"></td>
-	 	</tr>
-	  	
-	 	<tr>
-	 		<td align="center">
-				<button id="id_monsterCreate" class="button">Gerar</button>
-	 		</td>
-	 		<td align="center">
-				<button id="id_monsterClear" class="button">Limpar</button>
-	 		</td>
-	 	</tr>
-	  </table>
+        	<div id="id_divLeft3" class="rightSide center" align="center">
+        		<div id="id_tableMonstro" class="tableMonster">
+        		<br><br>
+				  <table style="width: 80%;">
+				  	<tr>
+				  		<td colspan="2" align="center">
+				  			Monstro:<select id="id_Monster"></select>
+				  		</td>
+				  	</tr>
+				  	<tr>
+				  		<td>T. Armor: </td><td><input type="text" id="id_MonsterACType" value=""spellcheck="false"></td>
+				  		<td>AC: </td><td><input type="number" size="5" id="id_MonsterAC" value="1" spellcheck="false"></td>
+				  	</tr>
+				  	<tr>
+				  		<td>CR: </td><td><input type="number" size="5" id="id_MonsterChaRating" value="1" spellcheck="false"></td>
+				  		<td> XP: </td><td><input type="number" size="5" id="id_MonsterChaXP" value="1" spellcheck="false"></td>
+				  	</tr>
+				  	<tr>
+				  		<td>STR: </td><td><input type="number" size="5" id="id_MonsterSTR" value="1" min="1" spellcheck="false"></td>
+				  		<td>STRMod: </td><td><input type="number" size="5" id="id_MonsterSTRMod" value="1" maxlength="2" spellcheck="false"></td>
+				 	</tr>
+				  	<tr>
+				  		<td>DEX: </td><td><input type="number" size="5" id="id_MonsterDEX" value="1" min="1" spellcheck="false"></td>
+				  		<td>DEXMod: </td><td><input type="number" size="5" id="id_MonsterDEXMod" value="1" maxlength="2" spellcheck="false"></td>
+				 	</tr>
+				  	<tr>
+				  		<td>CON: </td><td><input type="number" size="5" id="id_MonsterCON" value="1" min="1" spellcheck="false"></td>
+				  		<td>CONMod: </td><td><input type="number" size="5" id="id_MonsterCONMod" value="1" maxlength="2" spellcheck="false"></td>
+				 	</tr>
+				  	<tr>
+				  		<td>INT: </td><td><input type="number" size="5" id="id_MonsterINT" value="1" min="1" spellcheck="false"></td>
+				  		<td>INTMod: </td><td><input type="number" size="5" id="id_MonsterINTMod" value="1" maxlength="2" spellcheck="false"></td>
+				 	</tr>
+				  	<tr>
+				  		<td>WIS: </td><td><input type="number" size="5" id="id_MonsterWIS" value="1" min="1" spellcheck="false"></td>
+				  		<td>WISMod: </td><td><input type="number" size="5" id="id_MonsterWISMod" value="1" maxlength="2" spellcheck="false"></td>
+				 	</tr>
+				  	<tr>
+				  		<td>CHA: </td><td><input type="number" size="5" id="id_MonsterCHA" value="1" min="1" spellcheck="false"></td>
+				  		<td>CHAMod: </td><td><input type="number" size="5" id="id_MonsterCHAMod" value="1" maxlength="2" spellcheck="false"></td>
+				 	</tr>
+				  	<tr>
+				  		<td>HP: </td><td><input type="number" size="5" id="id_MonsterHP" value="1" min="1" spellcheck="false"></td>
+				  		<td>HPDice: </td><td><input type="text" id="id_MonsterHPMod" value="1" maxlength="2" spellcheck="false"></td>
+				 	</tr>
+				  	
+				 	<tr>
+				 		<td align="center" colspan="2">
+							<button id="id_monsterCreate" class="button">Gerar</button>
+				 		</td>
+				 		<td align="center" colspan="2">
+							<button id="id_monsterClear" class="button">Limpar</button>
+				 		</td>
+				 	</tr>
+				  </table>
+        		<br><br><br><br>
+	  </div>
   </div>
 
-  <div id="id_divRight3" class="leftSide monsterContour" align="center" style="overflow: hidden;">
-  	<img id="img_monster" class="portrait" src="#" style="display:none">
+  <div id="id_divRight3" class="leftSide" align="center" style="height:100%">
+  	<div id="id_divImgMonster" style="width:70%; height:70%">
+  		<br><br>
+		<canvas id="monsterCanvas" style="width:100%; height:70%">
+			
+		</canvas>
+	</div>
+  	<!--<img id="img_monster" class="portrait" src="#" style="display:none">-->
   </div>
         	
              <script src="monstros.js"></script>
@@ -407,6 +428,12 @@ $(document).ready(function(){
     document.getElementById('id_divLeft3').style.display = "block";
     document.getElementById('id_divAparencia').style.display = "block";
     document.getElementById('id_divShields').style.display = "block";
+    document.getElementById('id_divTableCidade').style.display = "block";
+    document.getElementById('id_tableMonstro').style.display = "block";
+    document.getElementById('id_divImgMonster').style.display = "block";
+    
+    
+    
   }); 
    
   $(".aba").hover(
