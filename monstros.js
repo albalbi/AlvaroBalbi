@@ -151,7 +151,7 @@ function geraTipoMonstro()
 	var value = 0;
 	while (value == 0)
 		value = Math.floor(Math.random() * names.length);
-	value = 1;
+	//value = 1;
 	monsterIndex = value;
 	document.getElementById('id_Monster').selectedIndex = value;
 
